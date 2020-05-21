@@ -1,0 +1,2 @@
+C:\Users\Ryan\Documents\GitHub\Console-Diary\Console-Diary\Debug\Console-Diary.exe
+C:\Users\Ryan\Documents\GitHub\Console-Diary\Console-Diary\Debug\Console-Diary.pdb
