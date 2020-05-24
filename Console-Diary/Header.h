@@ -7,3 +7,5 @@ std::unique_ptr<std::string[]> getTime();
 void createEntry();
 void saveFile();
 void displayEntries();
+struct Entries;
+std::vector<Entries> EntriesVec;

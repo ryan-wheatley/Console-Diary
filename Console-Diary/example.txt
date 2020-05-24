@@ -1,5 +1,19 @@
-1
-21
+0
+24
 05
 2020
-new entry
+hello
+
+24
+05
+2020
+hi
+4
+05
+2020
+Second.
+24
+05
+2020
+hi
+place_back. Now there are alot less compies in the code. You can delete this entry to start your own diary.

@@ -19,8 +19,10 @@ int main() {
         std::cout << "WELCOME TO YOUR CONSOLE DIARY" << std::endl;
         std::cout << '\n';
         std::cout << "Enter 1 to make a new entry." << std::endl;
-        std::cout << "Enter 2 to read or delete a past entry." << std::endl;
-        std::cout << '\n';
+        if (EntriesVec.size()!=0) {
+            std::cout << "Enter 2 to read or delete a past entry." << std::endl;
+            std::cout << '\n';
+        }
         char answer;
         std::cin >> answer;
         if (answer == '1') {
@@ -55,7 +57,8 @@ struct Entries {
     Entries(std::string d, std::string m, std::string y, std::string e) { day = d; month = m, year = y; entry = e; };
     ~Entries() {};
 };
-std::vector<Entries>EntriesVec;
+
+
 void loadFile() {
     std::string entry[4];
     std::ifstream myfile("example.txt");
@@ -70,13 +73,14 @@ void loadFile() {
             std::string entryNo;
             std::fstream file("example.txt");
             entryNo = GotoLine(file, 1);
-            int n = std::stoi(entryNo);
-            for (int i = 0; i < n; i++) {
+            int numberOfEntries = std::stoi(entryNo);
+            EntriesVec.reserve(numberOfEntries + 1);
+            for (int i = 0; i < numberOfEntries; i++) {
                 for (int j = 0; j < 4; j++) {
                     entry[j] = GotoLine(file, 4 * i + j + 2);
                 }
                 std::shared_ptr<Entries> ent = std::make_shared<Entries>(entry[0], entry[1], entry[2], entry[3]);
-                EntriesVec.push_back(*ent);
+                EntriesVec.emplace_back(*ent);
             }
             myfile.close();
         }
